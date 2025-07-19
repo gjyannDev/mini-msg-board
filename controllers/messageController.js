@@ -7,3 +7,10 @@ export function getAllMessage(req, res) {
 export function getForm(req, res) {
   return res.render("form", { title: "Add message's", error: [] });
 }
+
+export function addNewMessage(req, res) {
+
+  res.redirect("/");
+
+  return console.log(req.body);
+}
