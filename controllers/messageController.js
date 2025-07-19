@@ -9,8 +9,11 @@ export function getForm(req, res) {
 }
 
 export function addNewMessage(req, res) {
-
   res.redirect("/");
 
-  return console.log(req.body);
+  messages.push({
+    text: req.body.message,
+    user: req.body.name,
+    added: new Date(),
+  });
 }
