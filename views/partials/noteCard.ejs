@@ -1,0 +1,13 @@
+<div class="grid grid-cols-4 gap-8">
+  <% messages.forEach(msg => { %>
+  <div
+    class="bg-[var(--primary-clr)] text-[var(--base-black)] p-6 shadow-md border-4 border-[var(--base-black)] h-[23.25rem] grid gap-14"
+  >
+    <p class="text-xl mt-2"><%= msg.text %></p>
+    <div class="">
+      <h2 class="text-md font-semibold">- <%= msg.user %></h2>
+      <h2 class="text-xs text-[#606060]"><%= msg.added.toLocaleString() %></h2>
+    </div>
+  </div>
+  <% }) %>
+</div>
