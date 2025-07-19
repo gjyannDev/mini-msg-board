@@ -4,7 +4,10 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev:css": "npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch",
+    "dev:server": "nodemon server.js",
+    "dev": "concurrently \"npm run dev:css\" \"npm run dev:server\""
   },
   "repository": {
     "type": "git",
@@ -18,9 +21,16 @@
   },
   "homepage": "https://github.com/gjyannDev/mini-msg-board#readme",
   "dependencies": {
+    "@tailwindcss/cli": "^4.1.11",
     "dotenv": "^17.2.0",
     "ejs": "^3.1.10",
     "express": "^5.1.0",
     "nodemon": "^3.1.10"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "concurrently": "^9.2.0",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.11"
   }
 }
