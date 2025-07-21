@@ -1,4 +1,4 @@
-import { getAllMessages } from "../model/messagesModel.js";
+import { addMessage, getAllMessages } from "../model/messagesModel.js";
 
 export async function getAllMessage(req, res) {
   try {
@@ -14,12 +14,14 @@ export function getForm(req, res) {
   return res.render("form", { title: "Add message's", error: [] });
 }
 
-export function addNewMessage(req, res) {
+export async function addNewMessage(req, res) {
   res.redirect("/");
 
-  messages.push({
-    text: req.body.message,
-    user: req.body.name,
-    added: new Date(),
-  });
+  try {
+    const result = await addMessage(req.body.message, req.body.name);
+
+    return result;
+  } catch (error) {
+    console.error(error);
+  }
 }

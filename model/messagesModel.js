@@ -6,9 +6,10 @@ export async function getAllMessages() {
   return result.rows;
 }
 
-export async function addNewMessage() {
+export async function addMessage(message, userName) {
   const result = await pool.query(
-    "INSERT INTO messages (message, user_name) VALUES ('Hello Wolrd', 'giyann');"
+    `INSERT INTO messages (message, user_name) VALUES ($1, $2)`,
+    [message, userName]
   );
 
   return result;
