@@ -4,8 +4,6 @@ export async function getAllMessage(req, res) {
   try {
     const messages = await getAllMessages();
 
-    console.log(messages)
-
     return res.render("index", { title: "Homepage", messages: messages });
   } catch (error) {
     console.error(error);
