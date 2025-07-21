@@ -3,10 +3,10 @@
   <div
     class="bg-[var(--primary-clr)] text-[var(--base-black)] p-6 shadow-md border-4 border-[var(--base-black)] h-[20.25rem] grid gap-20"
   >
-    <p class="text-xl mt-2"><%= msg.text %></p>
+    <p class="text-xl mt-2"><%= msg.message %></p>
     <div class="">
-      <h2 class="text-md font-semibold">- <%= msg.user %></h2>
-      <h2 class="text-xs text-[#606060]"><%= msg.added.toLocaleString() %></h2>
+      <h2 class="text-md font-semibold">- <%= msg.user_name %></h2>
+      <h2 class="text-xs text-[#606060]"><%= msg.created_at.toLocaleString() %></h2>
     </div>
   </div>
   <% }) %>

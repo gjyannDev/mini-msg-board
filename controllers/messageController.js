@@ -1,7 +1,15 @@
-import { messages } from "../services/mockDb.js";
+import { getAllMessages } from "../model/messagesModel.js";
 
-export function getAllMessage(req, res) {
-  return res.render("index", { title: "Homepage", messages: messages });
+export async function getAllMessage(req, res) {
+  try {
+    const messages = await getAllMessages();
+
+    console.log(messages)
+
+    return res.render("index", { title: "Homepage", messages: messages });
+  } catch (error) {
+    console.error(error);
+  }
 }
 
 export function getForm(req, res) {
