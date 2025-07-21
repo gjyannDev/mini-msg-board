@@ -3,10 +3,11 @@ import { Pool } from "pg";
 
 dotenv.config();
 
-const db_url = process.argv[2] || process.env.DATABASE_URL;
+const db_url = process.env.DATABASE_URL;
+
 
 if (!db_url) {
-  console.error("Database URL not provided");
+  console.log("Database URL not provided");
   process.exit(1);
 }
 
@@ -16,3 +17,4 @@ export const pool = new Pool({
     rejectUnauthorized: false,
   },
 });
+

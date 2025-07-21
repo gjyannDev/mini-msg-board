@@ -24,4 +24,5 @@ app.use("/", message_router);
 
 app.listen(PORT, () => {
   console.log(`Listing to port: ${PORT}`);
+  console.log("URL: ", process.env.DATABASE_URL);
 });
